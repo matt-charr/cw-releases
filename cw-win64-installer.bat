@@ -13,7 +13,7 @@ if errorlevel 1 (
     exit /b 1
 )
 
-echo === Step 2 : Extraction              ===
+echo === Step 2 : Extraction ================
 if exist "%DEST_DIR%" rmdir /s /q "%DEST_DIR%"
 powershell -NoProfile -Command "Expand-Archive -Path '%TARGET_PATTERN%' -DestinationPath '%DEST_DIR%' -Force"
 if errorlevel 1 (
@@ -21,9 +21,9 @@ if errorlevel 1 (
     exit /b 1
 )
 
-echo === Step 3 : Cleanup                 ===
+echo === Step 3 : Cleanup ===================
 del "%TARGET_PATTERN%"
 
-echo === Finished                         ===
+echo === Finished ===========================
 echo File extracted in : "%DEST_DIR%"
 pause
